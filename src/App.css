@@ -1,1 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+.nav {
+  font-family: Bungee;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #9c765d; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, #dbc797, #9c765d);
+  font-size: 17px;
+  /* float: left; */
+  display: block;
+  /* text-align: center; */
+  /* text-decoration: none; */
+}
+
+.nav a {
+  float: left;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  display: block;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.nav a:hover {
+  background-color: #9c765d;
+}
+
+.flip-card {
+  font-family: Poppins;
+  background-color: transparent;
+  width: 200px;
+  height: 310px;
+  perspective: 1000px;
+  display: flex;
+  float: left;
+  margin-right: 50px;
+}
+
+.flip-card-inner {
+  border-radius: 25px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  border-radius: 25px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #9c765d;
+  background-image: linear-gradient(to right, #dbc797, #9c765d);
+  color: white;
+  transform: rotateY(180deg);
+  text-shadow: 1px 2px grey;
+}
