@@ -7,7 +7,8 @@ const Book = (props) => {
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <img
-            src={props.book.image_url}
+            src="http://books.google.com/books/content?id=JxNvDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            // src={props.book.image_url}
             alt="book"
             style={{ width: "200px", height: "310px", borderRadius: "25px" }}
           />

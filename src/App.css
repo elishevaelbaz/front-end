@@ -1,16 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat&display=swap");
+
+body {
+  background-color: #dbc797;
+  /* background-image: linear-gradient(to right, #dbc797, #9c765d); */
+  /* background-color: lightgray; */
+  background-size: 100% 100%;
+  margin-top: 0;
+}
 
 .nav {
-  font-family: Bungee;
+  /* font-family: Bungee; */
+  font-family: Montserrat;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #9c765d; /* For browsers that do not support gradients */
   background-image: linear-gradient(to right, #dbc797, #9c765d);
-  font-size: 17px;
+  font-size: 14px;
   /* float: left; */
   display: block;
+  border: solid;
   /* text-align: center; */
   /* text-decoration: none; */
 }
@@ -72,8 +82,138 @@
 
 .flip-card-back {
   background-color: #9c765d;
-  background-image: linear-gradient(to right, #dbc797, #9c765d);
+  background-image: linear-gradient(to right, #ffcb8e, #848ccf);
   color: white;
   transform: rotateY(180deg);
   text-shadow: 1px 2px grey;
+}
+
+.profile-div {
+  display: flex;
+}
+
+.profile-image {
+  float: left;
+  position: relative;
+  width: 23%;
+  height: 290px;
+  margin-left: 300px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin-top: 35px;
+}
+
+.user-info {
+  font-family: Poppins;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: white;
+  float: right;
+  position: relative;
+  text-shadow: 1px 2px grey;
+  /* overflow: hidden; */
+}
+
+.login-signup {
+  padding: 20px 100px;
+  position: relative;
+  /* min-height: 100vh; */
+  text-align: center;
+  color: white;
+  font-family: Poppins;
+  text-shadow: 1px 2px #97d7cb;
+}
+
+.account {
+  width: 35%;
+  height: 30px;
+  margin: 20px 0px;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: Poppins;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.login-submit-button {
+  background-color: #f0ecfc;
+  background-image: linear-gradient(315deg, #f0ecfc 0%, #97d7cb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.login-submit-button span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.login-submit-button:before,
+.login-submit-button:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #97d7cb;
+  transition: all 0.3s ease;
+}
+.login-submit-button:before {
+  height: 0%;
+  width: 2px;
+}
+.login-submit-button:after {
+  width: 0%;
+  height: 2px;
+}
+.login-submit-button:hover:before {
+  height: 100%;
+}
+.login-submit-button:hover:after {
+  width: 100%;
+}
+.login-submit-button:hover {
+  background: transparent;
+}
+.login-submit-button span:hover {
+  color: white;
+}
+.login-submit-button span:before,
+.login-submit-button span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #c797eb;
+  transition: all 0.3s ease;
+}
+.login-submit-button span:before {
+  width: 2px;
+  height: 0%;
+}
+.login-submit-button span:after {
+  height: 2px;
+  width: 0%;
+}
+.login-submit-button span:hover:before {
+  height: 100%;
+}
+.login-submit-button span:hover:after {
+  width: 100%;
 }
