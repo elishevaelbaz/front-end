@@ -1,8 +1,56 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
-const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+const Login = (props) => {
+  const history = useHistory();
+
+  const [state, setState] = useState({
+    username: "",
+    password: "",
+  });
+
+  const [error, setError] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(state),
+    })
+      .then((resp) => resp.json())
+      .then((object) => {
+        console.log(object);
+        if (object.error) {
+          setState({
+            username: "",
+            password: "",
+          });
+          setError(object.error);
+        } else {
+          const userInfo = {
+            userToken: object.token,
+            name: object.user.name,
+            user_id: object.user.id,
+          };
+          window.localStorage.setItem("booklub", JSON.stringify(userInfo));
+          props.setLoggedIn(window.localStorage.getItem("booklub"));
+          history.push("/home");
+        }
+      });
+  };
+
+  const changeHandler = (e) => {
+    e.persist();
+    setState((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   return (
     <div
@@ -10,7 +58,7 @@ const Login = () => {
       className="login-signup"
     >
       <h1>Login</h1>
-      <form onSubmit={null}>
+      <form onSubmit={handleLogin}>
         <label>Username</label>
         <br />
         <input
@@ -18,8 +66,8 @@ const Login = () => {
           name="username"
           type="text"
           autoComplete="off"
-          value={username}
-          onChange={null}
+          value={state.username}
+          onChange={changeHandler}
         />
         <br />
         <br />
@@ -30,8 +78,8 @@ const Login = () => {
           name="password"
           type="password"
           autoComplete="off"
-          value={password}
-          onChange={null}
+          value={state.password}
+          onChange={changeHandler}
         />
         <br />
         <br />

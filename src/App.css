@@ -10,8 +10,8 @@ body {
 }
 
 .nav {
-  /* font-family: Bungee; */
-  font-family: Montserrat;
+  font-family: Bungee;
+  /* font-family: Montserrat; */
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -216,4 +216,18 @@ body {
 }
 .login-submit-button span:hover:after {
   width: 100%;
+}
+
+.book-club-list {
+  font-family: Poppins;
+  font-size: 13px;
+  background-color: #fcf2c7;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  border: solid;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    3px 3px 4px 0px #97d7cb, 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
 }
