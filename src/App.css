@@ -11,6 +11,7 @@ body {
 
 .nav {
   font-family: Bungee;
+  text-shadow: 1px 1px #97d7cb;
   /* font-family: Montserrat; */
   margin: 0;
   padding: 0;
@@ -230,4 +231,34 @@ body {
   border: solid;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
     3px 3px 4px 0px #97d7cb, 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.home-not-logged-in {
+  font-family: Bungee;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+.home-logged-in {
+  font-family: Bungee;
+  color: white;
+  font-size: 41px;
+  text-shadow: 2px 2px #97d7cb;
+  text-align: center;
+}
+
+.register-login-home-buttons {
+  text-align: center;
+  padding: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.register-login-home:hover {
+  background-color: #f0ecfc;
+  background-image: linear-gradient(315deg, #f0ecfc 0%, #97d7cb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
 }

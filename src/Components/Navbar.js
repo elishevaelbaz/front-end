@@ -39,14 +39,16 @@ const Navbar = (props) => {
       ) : (
         <>
           <NavLink to="/home" exact>
-            <h2>Home</h2>
+            <h2>BooKlub</h2>
           </NavLink>
-          <NavLink to="/signup" exact>
-            <h2>Register</h2>
-          </NavLink>
-          <NavLink to="/login" exact>
-            <h2>Log In</h2>
-          </NavLink>
+          <div style={{ marginLeft: "80%" }}>
+            <NavLink to="/signup" exact>
+              <h2>Register</h2>
+            </NavLink>
+            <NavLink to="/login" exact>
+              <h2>Log In</h2>
+            </NavLink>
+          </div>
         </>
       )}
     </div>

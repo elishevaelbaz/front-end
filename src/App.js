@@ -27,7 +27,9 @@ function App() {
             <Route
               exact
               path="/home"
-              render={() => <Home loggedIn={loggedIn} />}
+              render={() => (
+                <Home setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
+              )}
             />
             <Route exact path="/books" component={BooksContainer} />
             <Route exact path="/booklubs" component={BookClubsList} />
@@ -38,7 +40,9 @@ function App() {
             <Route
               exact
               path="/home"
-              render={() => <Home loggedIn={loggedIn} />}
+              render={() => (
+                <Home setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
+              )}
             />
             <Route
               exact
