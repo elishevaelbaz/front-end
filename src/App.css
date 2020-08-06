@@ -2,7 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat&display=swap");
 
 body {
-  background-color: #dbc797;
+  /* background-color: #dbc797; */
+  background-color: #e3bcbc;
   /* background-image: linear-gradient(to right, #dbc797, #9c765d); */
   /* background-color: lightgray; */
   background-size: 100% 100%;
@@ -22,6 +23,7 @@ body {
   /* float: left; */
   display: block;
   border: solid;
+  filter: drop-shadow(2px 2px 2px black);
   /* text-align: center; */
   /* text-decoration: none; */
 }
@@ -48,10 +50,11 @@ body {
   perspective: 1000px;
   display: flex;
   float: left;
-  margin-right: 50px;
+  margin-right: 40px;
 }
 
 .flip-card-inner {
+  font-size: 12px;
   border-radius: 25px;
   position: relative;
   width: 100%;
@@ -83,7 +86,7 @@ body {
 
 .flip-card-back {
   background-color: #9c765d;
-  background-image: linear-gradient(to right, #ffcb8e, #848ccf);
+  background-image: linear-gradient(to right, #e3bcbc, #f7e298);
   color: white;
   transform: rotateY(180deg);
   text-shadow: 1px 2px grey;
@@ -105,18 +108,20 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  object-fit: cover;
   margin-top: 35px;
 }
 
 .user-info {
   font-family: Poppins;
+  font-size: 15px;
   margin: 0;
   padding: 0;
   text-align: center;
   color: white;
   float: right;
   position: relative;
-  text-shadow: 1px 2px grey;
+  text-shadow: 1px 2px #9c765d;
   /* overflow: hidden; */
 }
 
@@ -155,7 +160,7 @@ body {
 
 .login-submit-button {
   background-color: #f0ecfc;
-  background-image: linear-gradient(315deg, #f0ecfc 0%, #97d7cb 74%);
+  background-image: linear-gradient(315deg, #f0ecfc 0%, #97d7cb 85%);
   line-height: 42px;
   padding: 0;
   border: none;
@@ -236,6 +241,7 @@ body {
 .home-not-logged-in {
   font-family: Bungee;
   color: white;
+  text-shadow: 2px 2px #97d7cb;
   font-size: 40px;
   text-align: center;
 }
@@ -243,7 +249,7 @@ body {
 .home-logged-in {
   font-family: Bungee;
   color: white;
-  font-size: 41px;
+  font-size: 45px;
   text-shadow: 2px 2px #97d7cb;
   text-align: center;
 }

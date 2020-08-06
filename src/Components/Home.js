@@ -1,6 +1,7 @@
 import React from "react";
 import "./leaningimages.sass";
 import "../App.css";
+import Confetti from "react-confetti";
 
 const Home = (props) => {
   const handleRegister = () => {};
@@ -37,9 +38,12 @@ const Home = (props) => {
       </div>
       <div>
         {props.loggedIn ? (
-          <h1 className="home-logged-in">
-            Welcome back {JSON.parse(props.loggedIn).name.split(" ")[0]}!
-          </h1>
+          <>
+            <Confetti />
+            <h1 className="home-logged-in">
+              Welcome back {JSON.parse(props.loggedIn).name.split(" ")[0]}!
+            </h1>
+          </>
         ) : (
           // <h1 className="home-logged-in">Recently Joined</h1>
           // should i fetch again here (probably not) or should i move state for bookclubs up into the app so that i can pass it into here as well

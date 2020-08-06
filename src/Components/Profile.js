@@ -34,6 +34,7 @@ const Profile = () => {
         <h5>Bio: {user.description}</h5>
         <h2>Fave Books:{user.favorite_books}</h2>
         <h2>Location:{user.location}</h2>
+        <button className="custom-btn login-submit-button">Edit Profile</button>
       </div>
     </div>
   );

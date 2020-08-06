@@ -14,9 +14,12 @@ const Book = (props) => {
           />
         </div>
         <div className="flip-card-back">
-          <h3>{props.book.title}</h3>
-          <h5>{props.book.author}</h5>
+          <h2>{props.book.title}</h2>
+          <h3>{props.book.author}</h3>
           <p>{props.book.description}</p>
+          <button className="custom-btn login-submit-button">
+            Join Bookclub
+          </button>
         </div>
       </div>
     </div>

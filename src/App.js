@@ -9,13 +9,19 @@ import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import Home from "./Components/Home";
 import BookClubsList from "./Components/BookClubsList";
+import BookClub from "./Components/BookClub";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(
     window.localStorage.getItem("booklub")
   );
 
+  const [bookclub, setBookClub] = useState({});
+
   // console.log("render", loggedIn);
+  const bookClubProps = (bc) => {
+    setBookClub(bc);
+  };
 
   return (
     <div className="App">
@@ -32,7 +38,16 @@ function App() {
               )}
             />
             <Route exact path="/books" component={BooksContainer} />
-            <Route exact path="/booklubs" component={BookClubsList} />
+            <Route
+              exact
+              path="/booklubs"
+              render={() => <BookClubsList bookClubProps={bookClubProps} />}
+            />
+            <Route
+              exact
+              path="/booklubs/:id"
+              render={(props) => <BookClub bookclub={bookclub} {...props} />}
+            />
             <Route exact path="/profile" component={Profile} />
           </>
         ) : (
