@@ -10,6 +10,7 @@ import Signup from "./Components/Signup";
 import Home from "./Components/Home";
 import BookClubsList from "./Components/BookClubsList";
 import BookClub from "./Components/BookClub";
+import Cursor from "./Components/Cursor";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(
@@ -23,61 +24,70 @@ function App() {
     setBookClub(bc);
   };
 
-  return (
-    <div className="App">
-      <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-      <br></br>
-      <Switch>
-        {loggedIn ? (
-          <>
-            <Route
-              exact
-              path="/home"
-              render={() => (
-                <Home setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
-              )}
-            />
-            <Route exact path="/books" component={BooksContainer} />
-            <Route
-              exact
-              path="/booklubs"
-              render={() => <BookClubsList bookClubProps={bookClubProps} />}
-            />
-            <Route
-              exact
-              path="/booklubs/:id"
-              render={(props) => <BookClub bookclub={bookclub} {...props} />}
-            />
-            <Route exact path="/profile" component={Profile} />
-          </>
-        ) : (
-          <>
-            <Route
-              exact
-              path="/home"
-              render={() => (
-                <Home setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
-              )}
-            />
-            <Route
-              exact
-              path="/login"
-              render={() => <Login setLoggedIn={setLoggedIn} />}
-            />
-            <Route
-              exact
-              path="/signup"
-              render={() => <Signup setLoggedIn={setLoggedIn} />}
-            />
-          </>
-        )}
-      </Switch>
+  const onMouseMove = (e) => {
+    const cursor = document.querySelector(".cursor");
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+  };
 
-      {/* <Profile /> */}
-      {/* <BooksContainer /> */}
-      {/* <Login setLoggedIn={setLoggedIn} /> */}
-      {/* <Signup setLoggedIn={setLoggedIn} /> */}
-    </div>
+  return (
+    <>
+      <Cursor onMouseMove={onMouseMove} />
+      <div className="App">
+        <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <br></br>
+        <Switch>
+          {loggedIn ? (
+            <>
+              <Route
+                exact
+                path="/home"
+                render={() => (
+                  <Home setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
+                )}
+              />
+              <Route exact path="/books" component={BooksContainer} />
+              <Route
+                exact
+                path="/booklubs"
+                render={() => <BookClubsList bookClubProps={bookClubProps} />}
+              />
+              <Route
+                exact
+                path="/booklubs/:id"
+                render={(props) => <BookClub bookclub={bookclub} {...props} />}
+              />
+              <Route exact path="/profile" component={Profile} />
+            </>
+          ) : (
+            <>
+              <Route
+                exact
+                path="/home"
+                render={() => (
+                  <Home setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
+                )}
+              />
+              <Route
+                exact
+                path="/login"
+                render={() => <Login setLoggedIn={setLoggedIn} />}
+              />
+              <Route
+                exact
+                path="/signup"
+                render={() => <Signup setLoggedIn={setLoggedIn} />}
+              />
+            </>
+          )}
+        </Switch>
+
+        {/* <Profile /> */}
+        {/* <BooksContainer /> */}
+        {/* <Login setLoggedIn={setLoggedIn} /> */}
+        {/* <Signup setLoggedIn={setLoggedIn} /> */}
+      </div>
+    </>
   );
 }
 

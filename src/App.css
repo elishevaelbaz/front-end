@@ -10,6 +10,21 @@ body {
   margin-top: 0;
 }
 
+.cursor {
+  cursor: url("/images/chef.svg"), url("/images/chef.cur");
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid blue;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  transition-property: background, border, transform;
+  transform-origin: 150% 150%;
+  z-index: 99;
+}
+
 .nav {
   font-family: Bungee;
   text-shadow: 1px 1px #97d7cb;
@@ -249,7 +264,7 @@ body {
 .home-logged-in {
   font-family: Bungee;
   color: white;
-  font-size: 45px;
+  font-size: 55px;
   text-shadow: 2px 2px #97d7cb;
   text-align: center;
 }
@@ -267,4 +282,19 @@ body {
   line-height: 42px;
   padding: 0;
   border: none;
+}
+
+.individual-bookclub {
+  font-family: Poppins;
+  font-size: 15px;
+  color: white;
+  text-shadow: 1px 1px #97d7cb;
+  text-align: center;
+}
+
+.add-comment {
+  font-family: Poppins;
+  padding: 20px 100px;
+  position: relative;
+  margin-left: 20%;
 }

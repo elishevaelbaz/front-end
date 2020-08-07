@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Comments from "./Comments";
+import AddComment from "./AddComment";
 import "../App.css";
 
 const BookClub = (props) => {
@@ -21,16 +23,29 @@ const BookClub = (props) => {
       .then((bookClub) => setBookclub(bookClub));
   }, []);
 
-  console.log(bookclub);
+  //   console.log(bookclub);
+  const renderComments = () => {
+    console.log(bookclub);
+    return bookclub.comments.map((comment) => <Comments comment={comment} />);
+  };
 
   return (
     <div>
       {bookclub.book && (
-        <div>
+        <div className="individual-bookclub">
           <h1>{bookclub.name}</h1>
-          <h2>{bookclub.book.title}</h2>
-          <img src={bookclub.book.image_url} />
-          <h3>{bookclub.comments[0].content}</h3>
+          <h2>
+            {bookclub.book.title} by {bookclub.book.author}
+          </h2>
+          <img
+            className="flip-card"
+            style={{ alignSelf: "center" }}
+            src={bookclub.book.image_url}
+          />
+          <br></br>
+          <h1>Comments</h1>
+          {renderComments()}
+          <AddComment />
         </div>
       )}
     </div>
