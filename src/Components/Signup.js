@@ -59,10 +59,7 @@ const Signup = (props) => {
   };
 
   return (
-    <div
-      style={{ border: "dashed", borderColor: "black" }}
-      className="login-signup"
-    >
+    <div className="login-signup">
       <h1>Create an account</h1>
       <form onSubmit={handleSignup}>
         <label>Name</label>

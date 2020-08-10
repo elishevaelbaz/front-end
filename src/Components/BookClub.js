@@ -34,16 +34,12 @@ const BookClub = (props) => {
       {bookclub.book && (
         <div className="individual-bookclub">
           <h1>{bookclub.name}</h1>
-          <h2>
+          <h4>
             {bookclub.book.title} by {bookclub.book.author}
-          </h2>
-          <img
-            className="flip-card"
-            style={{ alignSelf: "center" }}
-            src={bookclub.book.image_url}
-          />
-          <br></br>
-          <h1>Comments</h1>
+          </h4>
+          <img className="booklub-image" src={bookclub.book.image_url} />
+          {/* <br></br> */}
+          <h3>Comments</h3>
           {renderComments()}
           <AddComment />
         </div>
