@@ -5,7 +5,7 @@ import "../App.css";
 
 const BookClub = (props) => {
   //   console.log(props);
-  const [bookclub, setBookclub] = useState([]);
+  const [bookclub, setBookclub] = useState({});
 
   let user = window.localStorage.getItem("booklub");
   const token = JSON.parse(user).userToken;
@@ -23,15 +23,16 @@ const BookClub = (props) => {
       .then((bookClub) => setBookclub(bookClub));
   }, []);
 
-  //   console.log(bookclub);
+  // console.log(bookclub);
   const renderComments = () => {
-    console.log(bookclub);
-    return bookclub.comments.map((comment) => <Comments comment={comment} />);
+    return bookclub.comments.map((comment) => (
+      <Comments comment={comment} setBookclub={setBookclub} />
+    ));
   };
 
   return (
     <div>
-      {bookclub.book && (
+      {bookclub && bookclub.book && (
         <div className="individual-bookclub">
           <h1>{bookclub.name}</h1>
           <h4>
@@ -41,7 +42,10 @@ const BookClub = (props) => {
           {/* <br></br> */}
           <h3>Comments</h3>
           {renderComments()}
-          <AddComment />
+          <AddComment
+            bookclub_id={props.match.params.id}
+            setBookclub={setBookclub}
+          />
         </div>
       )}
     </div>

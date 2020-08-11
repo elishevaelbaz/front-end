@@ -66,6 +66,7 @@ body {
   display: flex;
   float: left;
   margin-right: 40px;
+  margin-bottom: 15px;
 }
 
 .flip-card-inner {
@@ -294,7 +295,14 @@ body {
   text-align: center;
 }
 
-.individual-bookclub h1 h3 {
+.individual-bookclub h3 {
+  font-family: Bungee;
+  font-size: 37px;
+  color: white;
+  text-shadow: 2px 3px #97d7cb;
+}
+
+.individual-bookclub h1 {
   font-family: Bungee;
   font-size: 37px;
   color: white;

@@ -2,10 +2,9 @@ import React from "react";
 import "./leaningimages.sass";
 import "../App.css";
 import Confetti from "react-confetti";
+import { NavLink } from "react-router-dom";
 
 const Home = (props) => {
-  const handleRegister = () => {};
-
   const handleLogin = () => {};
 
   return (
@@ -51,18 +50,22 @@ const Home = (props) => {
           <>
             <h1 className="home-not-logged-in">Join the community!</h1>
             <div className="register-login-home-buttons">
-              <button
-                className="custom-btn register-login-home"
-                style={{ backgroundColor: "#B33B44" }}
-              >
-                Register
-              </button>
-              <button
-                className="custom-btn register-login-home"
-                style={{ backgroundColor: "#E3BCBC" }}
-              >
-                Login
-              </button>
+              <NavLink to="/signup" exact>
+                <button
+                  className="custom-btn register-login-home"
+                  style={{ backgroundColor: "#B33B44" }}
+                >
+                  Register
+                </button>
+              </NavLink>
+              <NavLink to="/login" exact>
+                <button
+                  className="custom-btn register-login-home"
+                  style={{ backgroundColor: "#E3BCBC" }}
+                >
+                  Login
+                </button>
+              </NavLink>
             </div>
           </>
         )}
