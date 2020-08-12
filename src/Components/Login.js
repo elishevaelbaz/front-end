@@ -24,7 +24,7 @@ const Login = (props) => {
     })
       .then((resp) => resp.json())
       .then((object) => {
-        console.log(object);
+        // console.log(object);
         if (object.error) {
           setState({
             username: "",

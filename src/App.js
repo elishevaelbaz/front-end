@@ -17,12 +17,12 @@ function App() {
     window.localStorage.getItem("booklub")
   );
 
-  const [bookclub, setBookClub] = useState({});
+  // const [bookclub, setBookClub] = useState({});
 
-  // console.log("render", loggedIn);
-  const bookClubProps = (bc) => {
-    setBookClub(bc);
-  };
+  // // console.log("render", loggedIn);
+  // const bookClubProps = (bc) => {
+  //   setBookClub(bc);
+  // };
 
   const onMouseMove = (e) => {
     const cursor = document.querySelector(".cursor");
@@ -47,15 +47,11 @@ function App() {
                 )}
               />
               <Route exact path="/books" component={BooksContainer} />
-              <Route
-                exact
-                path="/booklubs"
-                render={() => <BookClubsList bookClubProps={bookClubProps} />}
-              />
+              <Route exact path="/booklubs" render={() => <BookClubsList />} />
               <Route
                 exact
                 path="/booklubs/:id"
-                render={(props) => <BookClub bookclub={bookclub} {...props} />}
+                render={(props) => <BookClub {...props} />}
               />
               <Route exact path="/profile" component={Profile} />
             </>

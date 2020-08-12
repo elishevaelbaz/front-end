@@ -1,10 +1,32 @@
 import React from "react";
 import "../App.css";
+import { useHistory } from "react-router-dom";
 
 const Book = (props) => {
   // when you click join bookclub, make a fetch to create to localhost:3000/bookclubs/bookid(?)
   // then you'll get back a newly created bookclub instance, or the found bookclub instance
   // next you need to create a bookclub_user instance, using that bookclub idea and your user id
+  const history = useHistory();
+
+  const joinClub = () => {
+    const user = window.localStorage.getItem("booklub");
+    const token = JSON.parse(user).userToken;
+
+    fetch("http://localhost:3000/bookclubs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        book_id: props.book.id,
+        name: `${props.book.title} Club`,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((bookclub) => history.push(`/booklubs/${bookclub.id}`));
+  };
 
   return (
     <div className="flip-card">
@@ -21,7 +43,7 @@ const Book = (props) => {
           <h2>{props.book.title}</h2>
           <h3>{props.book.author}</h3>
           <p>{props.book.description}</p>
-          <button className="custom-btn login-submit-button">
+          <button onClick={joinClub} className="custom-btn login-submit-button">
             Join Bookclub
           </button>
         </div>

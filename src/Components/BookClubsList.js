@@ -25,9 +25,30 @@ const BookClubsList = (props) => {
   }, []);
 
   const renderBookClub = (bookclub) => {
-    props.bookClubProps(bookclub);
+    // props.bookClubProps(bookclub);
     // console.log(bookclub);
     history.push(`/booklubs/${bookclub.id}`);
+  };
+
+  const leaveBookclub = (bookclub) => {
+    const bcu_id = bookclub.bcu[0].id;
+    // console.log(bookclub.bcu);
+
+    fetch(`http://localhost:3000/bookclub_users/${bcu_id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+        Accept: "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((deletedBcu) => {
+        const updatedClubs = bookclubs.filter(
+          (bc) => bc.id != deletedBcu.bookclub_id
+        );
+        setBookclubs(updatedClubs);
+      });
   };
 
   const renderMyBookClubs = () => {
@@ -48,6 +69,7 @@ const BookClubsList = (props) => {
         <h1>{bookclub.name}</h1>
         <h2>{bookclub.book.title}</h2>
         <button
+          onClick={() => leaveBookclub(bookclub)}
           className="custom-btn login-submit-button"
           style={{
             float: "right",

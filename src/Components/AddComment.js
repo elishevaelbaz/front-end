@@ -38,6 +38,7 @@ const AddComment = (props) => {
             comments: [...prevState.comments, newComment],
           };
         });
+        setComment({ content: "" });
       });
   };
 
