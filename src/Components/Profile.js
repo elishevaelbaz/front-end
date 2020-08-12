@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
+import EditProfile from "./EditProfile";
 
 const Profile = () => {
   const [user, setUser] = useState([]);
+
+  const [clickedEdit, setClickedEdit] = useState(false);
 
   let userToken = window.localStorage.getItem("booklub");
   const token = JSON.parse(userToken).userToken;
@@ -22,20 +25,38 @@ const Profile = () => {
       .then((user) => setUser(user));
   }, []);
 
+  const renderEditProfile = () => {
+    // change the state so that clicked edit is true
+    setClickedEdit(true);
+  };
+
   return (
     <div className="profile-div">
       <div className="profile-image">
         <img src={user.image_url} />
       </div>
-      <div className="user-info">
-        <h1>{user.name}</h1>
-        <h2>Username: {user.username}</h2>
-        <h2>Age: {user.age}</h2>
-        <h5>Bio: {user.description}</h5>
-        <h2>Fave Books:{user.favorite_books}</h2>
-        <h2>Location:{user.location}</h2>
-        <button className="custom-btn login-submit-button">Edit Profile</button>
-      </div>
+      {clickedEdit ? (
+        <EditProfile
+          setClickedEdit={setClickedEdit}
+          user={user}
+          setUser={setUser}
+        />
+      ) : (
+        <div className="user-info">
+          <h1>{user.name}</h1>
+          <h2>Username: {user.username}</h2>
+          <h2>Age: {user.age}</h2>
+          <h5>Bio: {user.description}</h5>
+          <h2>Fave Books:{user.favorite_books}</h2>
+          <h2>Location:{user.location}</h2>
+          <button
+            onClick={renderEditProfile}
+            className="custom-btn login-submit-button"
+          >
+            Edit Profile
+          </button>
+        </div>
+      )}
     </div>
   );
 };
