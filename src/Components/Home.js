@@ -5,7 +5,7 @@ import Confetti from "react-confetti";
 import { NavLink } from "react-router-dom";
 
 const Home = (props) => {
-  const handleLogin = () => {};
+  // const handleLogin = () => {};
 
   return (
     <div>
@@ -44,9 +44,6 @@ const Home = (props) => {
             </h1>
           </>
         ) : (
-          // <h1 className="home-logged-in">Recently Joined</h1>
-          // should i fetch again here (probably not) or should i move state for bookclubs up into the app so that i can pass it into here as well
-          // or should i change the home page to feature something else
           <>
             <h1 className="home-not-logged-in">Join the community!</h1>
             <div className="register-login-home-buttons">

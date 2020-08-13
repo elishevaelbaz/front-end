@@ -31,21 +31,25 @@ const BookClub = (props) => {
   };
 
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       {bookclub && bookclub.book && (
         <div className="individual-bookclub">
-          <h1>{bookclub.name}</h1>
-          <h4>
-            {bookclub.book.title} by {bookclub.book.author}
-          </h4>
-          <img className="booklub-image" src={bookclub.book.image_url} />
+          <div className="book-details">
+            <h1>{bookclub.name}</h1>
+            <h4>
+              {bookclub.book.title} by {bookclub.book.author}
+            </h4>
+            <img className="booklub-image" src={bookclub.book.image_url} />
+          </div>
           {/* <br></br> */}
-          <h3>Comments</h3>
-          {renderComments()}
-          <AddComment
-            bookclub_id={props.match.params.id}
-            setBookclub={setBookclub}
-          />
+          <div className="book-comments">
+            <h3>Comments</h3>
+            {renderComments()}
+            <AddComment
+              bookclub_id={props.match.params.id}
+              setBookclub={setBookclub}
+            />
+          </div>
         </div>
       )}
     </div>

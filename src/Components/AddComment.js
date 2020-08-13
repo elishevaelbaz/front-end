@@ -46,7 +46,7 @@ const AddComment = (props) => {
     <form className="add-comment" onSubmit={handleCommentCreation}>
       <label></label>
       <input
-        className="account"
+        className="add-comment"
         name="comment"
         type="text"
         placeholder="share your thoughts"
@@ -55,7 +55,11 @@ const AddComment = (props) => {
         onChange={changeHandler}
       />
       <br></br>
-      <button type="submit" className="custom-btn login-submit-button">
+      <button
+        style={{ marginLeft: "50px" }}
+        type="submit"
+        className="custom-btn login-submit-button"
+      >
         <span>Add Comment</span>
       </button>
     </form>

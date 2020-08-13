@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import BookClub from "./BookClub";
 import "../App.css";
 import { useHistory } from "react-router-dom";
+// import Reward from "react-rewards";
 
 const BookClubsList = (props) => {
   const history = useHistory();
@@ -68,6 +69,7 @@ const BookClubsList = (props) => {
         </button>
         <h1>{bookclub.name}</h1>
         <h2>{bookclub.book.title}</h2>
+
         <button
           onClick={() => leaveBookclub(bookclub)}
           className="custom-btn login-submit-button"
@@ -81,12 +83,12 @@ const BookClubsList = (props) => {
         >
           Leave BookClub
         </button>
+
         <h3>{bookclub.book.author}</h3>
         {/* <h3>{bookclub.comments[0].content}</h3> */}
         <br></br>
       </div>
     ));
-    //have a button for each bookclub where when you click it it'll take you to that bookclubs page, which will have the books details and the comments section
   };
 
   return <div>{renderMyBookClubs()}</div>;
