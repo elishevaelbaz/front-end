@@ -61,7 +61,6 @@ const EditProfile = (props) => {
           onChange={changeHandler}
         />
         <br />
-        <br />
         <label>Username</label>
         <br />
         <input
@@ -73,7 +72,6 @@ const EditProfile = (props) => {
           onChange={changeHandler}
         />
 
-        <br />
         <br />
 
         <label>Age</label>
@@ -88,7 +86,6 @@ const EditProfile = (props) => {
         />
 
         <br />
-        <br />
 
         <label>Bio</label>
         <br />
@@ -101,7 +98,6 @@ const EditProfile = (props) => {
           onChange={changeHandler}
         />
 
-        <br />
         <br />
 
         <label>Favorite Books</label>
@@ -116,7 +112,6 @@ const EditProfile = (props) => {
         />
 
         <br />
-        <br />
 
         <label>Location</label>
         <br />
@@ -129,7 +124,6 @@ const EditProfile = (props) => {
           onChange={changeHandler}
         />
 
-        <br />
         <br />
         <button type="submit" className="custom-btn login-submit-button">
           Save Changes

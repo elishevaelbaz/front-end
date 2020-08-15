@@ -116,7 +116,7 @@ body {
   float: left;
   position: relative;
   width: 23%;
-  height: 290px;
+  height: 310px;
   margin-left: 300px;
 }
 
@@ -330,10 +330,16 @@ body {
   font-size: 15px;
   color: white;
   float: right;
+  /* text-align: center; */
   position: relative;
   text-shadow: 1px 2px #9c765d;
   width: 50%;
-  /* overflow: hidden; */
+  margin-left: 100px;
+  /* overflow: auto; */
+}
+
+.edit-profile label {
+  font-size: 20px;
 }
 
 .book-details {
