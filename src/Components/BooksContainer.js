@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Book from "./Book";
 import SearchBooks from "./SearchBooks";
+import BookPagination from "./BookPagination";
+import "./Paginate.css";
+import "../App.css";
 
 const BooksContainer = () => {
   const [books, setBooks] = useState([]);
@@ -31,6 +34,7 @@ const BooksContainer = () => {
     <div className="books-container">
       <SearchBooks setBooks={setBooks} />
       {renderBooks()}
+      <BookPagination />
     </div>
   );
 };

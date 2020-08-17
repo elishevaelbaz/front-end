@@ -36,16 +36,20 @@ const SearchBooks = (props) => {
   return (
     <div>
       <form onSubmit={fetchBooks}>
-        <label>
-          <h1>Search for books</h1>
+        {/* <label> */}
+        <div>
+          <label>
+            <h1>Search for books</h1>
+          </label>
           <input
             type="search"
-            placeholder="microservice, restful design, etc.,"
+            placeholder="Harry Potter"
             value={searchTerm}
             onChange={onInputChange}
           />
           <button type="submit">Search</button>
-        </label>
+        </div>
+        {/* </label> */}
       </form>
     </div>
   );
