@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Book from "./Book";
+import SearchBooks from "./SearchBooks";
 
 const BooksContainer = () => {
   const [books, setBooks] = useState([]);
@@ -20,11 +21,18 @@ const BooksContainer = () => {
       .then((booksArray) => setBooks(booksArray));
   }, []);
 
+  console.log(books);
+
   const renderBooks = () => {
     return books.map((book) => <Book book={book} />);
   };
 
-  return <div>{renderBooks()}</div>;
+  return (
+    <div className="books-container">
+      <SearchBooks setBooks={setBooks} />
+      {renderBooks()}
+    </div>
+  );
 };
 
 export default BooksContainer;

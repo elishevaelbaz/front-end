@@ -108,6 +108,10 @@ body {
   text-shadow: 1px 2px grey;
 }
 
+.books-container {
+  margin-left: 100px;
+}
+
 .profile-div {
   display: flex;
 }
