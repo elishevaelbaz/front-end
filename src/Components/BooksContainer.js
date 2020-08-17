@@ -32,9 +32,13 @@ const BooksContainer = () => {
 
   return (
     <div className="books-container">
-      <SearchBooks setBooks={setBooks} />
-      {renderBooks()}
-      <BookPagination />
+      <div style={{ marginBottom: "30px" }}>
+        <SearchBooks setBooks={setBooks} />
+      </div>
+      <div style={{ marginLeft: "150px" }}>{renderBooks()}</div>
+      <div>
+        <BookPagination />
+      </div>
     </div>
   );
 };

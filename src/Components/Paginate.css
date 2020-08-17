@@ -10,7 +10,7 @@ body {
   font-size: 20px;
   display: flex;
   justify-content: center;
-  /* flex-direction: column; */
+  flex-direction: column;
   align-items: center;
   float: left;
   position: relative;
@@ -21,7 +21,8 @@ body {
 }
 .paginate-ctn {
   display: flex;
-  float: left;
+  justify-content: flex-end;
+  /* float: left; */
 }
 .round-effect {
   color: #e3bcbc;
