@@ -12,33 +12,44 @@ const Signup = (props) => {
     description: "",
     favorite_books: "",
     location: "",
-    image_url: "",
+    image_url: {},
   });
 
   const handleSignup = (e) => {
     e.preventDefault();
 
-    const newUser = {
-      name: state.name,
-      username: state.username,
-      password: state.password,
-      age: state.age,
-      description: state.description,
-      favorite_books: state.favorite_books,
-      location: state.location,
-      image_url: state.image_url,
-    };
+    // const newUser = {
+    //   name: state.name,
+    //   username: state.username,
+    //   password: state.password,
+    //   age: state.age,
+    //   description: state.description,
+    //   favorite_books: state.favorite_books,
+    //   location: state.location,
+    //   image_url: state.image_url,
+    // };
+
+    const form = new FormData();
+    form.append("name", state.name);
+    form.append("username", state.username);
+    form.append("password", state.password);
+    form.append("age", state.age);
+    form.append("description", state.description);
+    form.append("favorite_books", state.favorite_books);
+    form.append("location", state.location);
+    form.append("image_url", state.image_url);
 
     fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        // "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(newUser),
+      body: form,
     })
       .then((resp) => resp.json())
       .then((object) => {
+        // console.log(object);
         const userInfo = {
           userToken: object.token,
           name: object.user.name,
@@ -56,6 +67,17 @@ const Signup = (props) => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  // for uploading an image
+  const onChange = (e) => {
+    e.persist();
+    setState((prevState) => {
+      return {
+        ...prevState,
+        [e.target.name]: e.target.files[0],
+      };
+    });
   };
 
   return (
@@ -162,10 +184,10 @@ const Signup = (props) => {
         <input
           className="account"
           name="image_url"
-          type="text"
+          type="file"
           autoComplete="off"
-          value={state.image_url}
-          onChange={changeHandler}
+          // value={state.image_url}
+          onChange={onChange}
         />
         <br />
         <br />
