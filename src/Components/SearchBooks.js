@@ -26,6 +26,7 @@ const SearchBooks = (props) => {
             description: item.volumeInfo.description,
             image_url: item.volumeInfo.imageLinks.thumbnail,
             title: item.volumeInfo.title,
+            id: parseInt(item.volumeInfo.industryIdentifiers[0].identifier),
           });
         });
         props.setBooks(booksArray);

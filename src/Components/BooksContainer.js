@@ -24,11 +24,11 @@ const BooksContainer = () => {
       .then((booksArray) => setBooks(booksArray));
   }, []);
 
-  console.log(books);
-
   const renderBooks = () => {
     return books.map((book) => <Book book={book} />);
   };
+
+  // console.log(books);
 
   return (
     <div className="books-container">
