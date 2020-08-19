@@ -112,6 +112,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
   /* margin-left: 100px; */
   /* width: 80%;
   margin: 0 auto; */
@@ -148,6 +149,18 @@ body {
   position: relative;
   text-shadow: 1px 2px #9c765d;
   /* overflow: hidden; */
+}
+
+.user-info h1 {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.user-info span {
+  font-weight: bold;
+  font-size: 25px;
+  color: #9c765d;
+  text-shadow: none;
 }
 
 .login-signup {
@@ -269,7 +282,7 @@ body {
   font-family: Bungee;
   color: white;
   text-shadow: 2px 2px #97d7cb;
-  font-size: 40px;
+  font-size: 45px;
   text-align: center;
 }
 

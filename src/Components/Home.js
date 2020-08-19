@@ -40,7 +40,7 @@ const Home = (props) => {
           <>
             <Confetti />
             <h1 className="home-logged-in">
-              Welcome back {JSON.parse(props.loggedIn).name.split(" ")[0]}!
+              Welcome {JSON.parse(props.loggedIn).name.split(" ")[0]}!
             </h1>
           </>
         ) : (

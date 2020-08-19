@@ -24,15 +24,15 @@ function App() {
   //   setBookClub(bc);
   // };
 
-  const onMouseMove = (e) => {
-    const cursor = document.querySelector(".cursor");
-    cursor.style.left = `${e.pageX}px`;
-    cursor.style.top = `${e.pageY}px`;
-  };
+  // const onMouseMove = (e) => {
+  //   const cursor = document.querySelector(".cursor");
+  //   cursor.style.left = `${e.pageX}px`;
+  //   cursor.style.top = `${e.pageY}px`;
+  // };
 
   return (
     <>
-      <Cursor onMouseMove={onMouseMove} />
+      {/* <Cursor onMouseMove={onMouseMove} /> */}
       <div className="App">
         <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <br></br>

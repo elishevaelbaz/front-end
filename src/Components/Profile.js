@@ -44,11 +44,23 @@ const Profile = () => {
       ) : (
         <div className="user-info">
           <h1>{user.name}</h1>
-          <h2>Username: {user.username}</h2>
-          <h2>Age: {user.age}</h2>
-          <h5>Bio: {user.description}</h5>
-          <h2>Fave Books:{user.favorite_books}</h2>
-          <h2>Location:{user.location}</h2>
+          <h2>
+            <span>Username:</span> {user.username}
+          </h2>
+          <h2>
+            <span>Age:</span> {user.age}
+          </h2>
+          <h3>
+            <span>Bio:</span> {user.description}
+          </h3>
+          <h2>
+            <span>Fave Books: </span>
+            {user.favorite_books}
+          </h2>
+          <h2>
+            <span>Location:</span> {user.location}
+          </h2>
+          <br />
           <button
             onClick={renderEditProfile}
             className="custom-btn login-submit-button"

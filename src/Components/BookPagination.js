@@ -39,8 +39,8 @@ function Paginate() {
 
   const paginationRender = (
     <div className="flex-container">
-      <div> currentPage : {currentPage} </div>
-      <br></br>
+      {/* <div> currentPage : {currentPage} </div> */}
+      {/* <br></br> */}
       <div className="paginate-ctn">
         <div className="round-effect" onClick={prevPage}>
           {" "}

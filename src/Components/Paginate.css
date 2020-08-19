@@ -7,6 +7,7 @@ body {
 }
 
 .flex-container {
+  color: white;
   font-size: 20px;
   display: flex;
   justify-content: center;
@@ -25,7 +26,7 @@ body {
   /* float: left; */
 }
 .round-effect {
-  color: #e3bcbc;
+  color: #97d7cb;
   cursor: pointer;
   /*   border:1px solid red; */
   background-color: white;
@@ -33,7 +34,7 @@ body {
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 9px;
+  padding-top: 10px;
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -45,18 +46,18 @@ body {
 .round-effect:hover {
   text-decoration: none;
   background: #9c765d;
-  color: #e3bcbc;
+  color: #97d7cb;
 }
 .round-effect:hover a {
   text-decoration: none;
-  color: #e3bcbc;
+  color: #97d7cb;
 }
 
 .active {
   background: #9c765d;
-  color: #e3bcbc;
+  color: #97d7cb;
 }
 a:link {
   text-decoration: none;
-  color: #e3bcbc;
+  color: #97d7cb;
 }
