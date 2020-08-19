@@ -34,7 +34,10 @@ const Comments = (props) => {
     <div>
       {/* {console.log(props)} */}
       <h4>
-        {props.comment.user_name}: {props.comment.content}
+        <span style={{ color: "#9c765d", fontWeight: "bold" }}>
+          {props.comment.user_name}
+        </span>
+        : {props.comment.content}
       </h4>
       {/* how can i make the buttons next to the username and content */}
       {props.comment.user_id === user_id && (

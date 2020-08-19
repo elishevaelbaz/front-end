@@ -22,6 +22,9 @@ const Book = (props) => {
       body: JSON.stringify({
         book_id: props.book.id,
         name: `${props.book.title} Club`,
+        title: props.book.title,
+        author: props.book.author,
+        image_url: props.book.image_url,
       }),
     })
       .then((resp) => resp.json())
