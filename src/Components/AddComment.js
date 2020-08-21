@@ -30,7 +30,6 @@ const AddComment = (props) => {
     })
       .then((resp) => resp.json())
       .then((newComment) => {
-        // console.log(newComment);
         props.setBookclub((prevState) => {
           console.log(prevState);
           return {

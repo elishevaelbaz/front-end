@@ -77,11 +77,6 @@ function App() {
             </>
           )}
         </Switch>
-
-        {/* <Profile /> */}
-        {/* <BooksContainer /> */}
-        {/* <Login setLoggedIn={setLoggedIn} /> */}
-        {/* <Signup setLoggedIn={setLoggedIn} /> */}
       </div>
     </>
   );

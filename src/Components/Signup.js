@@ -18,17 +18,6 @@ const Signup = (props) => {
   const handleSignup = (e) => {
     e.preventDefault();
 
-    // const newUser = {
-    //   name: state.name,
-    //   username: state.username,
-    //   password: state.password,
-    //   age: state.age,
-    //   description: state.description,
-    //   favorite_books: state.favorite_books,
-    //   location: state.location,
-    //   image_url: state.image_url,
-    // };
-
     const form = new FormData();
     form.append("name", state.name);
     form.append("username", state.username);
@@ -49,7 +38,6 @@ const Signup = (props) => {
     })
       .then((resp) => resp.json())
       .then((object) => {
-        // console.log(object);
         const userInfo = {
           userToken: object.token,
           name: object.user.name,

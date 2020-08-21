@@ -3,9 +3,6 @@ import "../App.css";
 import { useHistory } from "react-router-dom";
 
 const Book = (props) => {
-  // when you click join bookclub, make a fetch to create to localhost:3000/bookclubs/bookid(?)
-  // then you'll get back a newly created bookclub instance, or the found bookclub instance
-  // next you need to create a bookclub_user instance, using that bookclub idea and your user id
   const history = useHistory();
 
   const joinClub = () => {
@@ -36,7 +33,6 @@ const Book = (props) => {
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <img
-            // src="http://books.google.com/books/content?id=JxNvDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
             src={props.book.image_url}
             alt="book"
             style={{ width: "200px", height: "310px", borderRadius: "25px" }}

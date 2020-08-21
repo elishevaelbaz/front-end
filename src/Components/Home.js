@@ -5,8 +5,6 @@ import Confetti from "react-confetti";
 import { NavLink } from "react-router-dom";
 
 const Home = (props) => {
-  // const handleLogin = () => {};
-
   return (
     <div>
       <div className="images-leaning">

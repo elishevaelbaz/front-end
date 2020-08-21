@@ -30,7 +30,7 @@ const Comments = (props) => {
 
   return (
     <div>
-      <h4>
+      <h4 style={{ display: "inline" }}>
         <span style={{ color: "#9c765d", fontWeight: "bold" }}>
           {props.comment.user_name}
         </span>
@@ -38,7 +38,7 @@ const Comments = (props) => {
       </h4>
       {/* how can i make the buttons next to the username and content */}
       {props.comment.user_id === user_id && (
-        <div>
+        <>
           {/* MAKE EDITING A COMMENT STRETCH */}
           {/* <button
             className="custom-btn login-submit-button"
@@ -57,13 +57,15 @@ const Comments = (props) => {
             className="custom-btn login-submit-button"
             style={{
               // float: "right",
+              display: "inline",
               backgroundColor: "red",
               backgroundImage: "linear-gradient(315deg, pink 0%, red 74%)",
+              marginLeft: "15px",
             }}
           >
             Delete 🗑️
           </button>
-        </div>
+        </>
       )}
     </div>
   );
