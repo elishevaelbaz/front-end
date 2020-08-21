@@ -17,8 +17,6 @@ const Comments = (props) => {
       .then((resp) => resp.json())
       .then((deletedComment) => {
         props.setBookclub((prevState) => {
-          // console.log(deletedComment);
-          // console.log(prevState);
           const updatedComments = prevState.comments.filter(
             (comm) => comm.id != props.comment.id
           );
@@ -32,7 +30,6 @@ const Comments = (props) => {
 
   return (
     <div>
-      {/* {console.log(props)} */}
       <h4>
         <span style={{ color: "#9c765d", fontWeight: "bold" }}>
           {props.comment.user_name}

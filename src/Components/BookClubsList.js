@@ -26,14 +26,11 @@ const BookClubsList = (props) => {
   }, []);
 
   const renderBookClub = (bookclub) => {
-    // props.bookClubProps(bookclub);
-    // console.log(bookclub);
     history.push(`/booklubs/${bookclub.id}`);
   };
 
   const leaveBookclub = (bookclub) => {
     const bcu_id = bookclub.bcu[0].id;
-    // console.log(bookclub.bcu);
 
     fetch(`http://localhost:3000/bookclub_users/${bcu_id}`, {
       method: "DELETE",
