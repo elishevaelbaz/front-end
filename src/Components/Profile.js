@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import EditProfile from "./EditProfile";
 
-const Profile = () => {
+const Profile = (props) => {
   const [user, setUser] = useState([]);
 
   const [clickedEdit, setClickedEdit] = useState(false);
 
   let userToken = window.localStorage.getItem("booklub");
   const token = JSON.parse(userToken).userToken;
-  const user_id = JSON.parse(userToken).user_id;
+  const user_id = props.location.aboutProps
+    ? props.location.aboutProps.user_id
+    : JSON.parse(userToken).user_id;
 
   useEffect(() => {
     // update user id to be dynamic once logged in and clicking on another user to see their profile??
@@ -61,12 +63,14 @@ const Profile = () => {
             <span>Location:</span> {user.location}
           </h2>
           <br />
-          <button
-            onClick={renderEditProfile}
-            className="custom-btn login-submit-button"
-          >
-            Edit Profile
-          </button>
+          {user_id === JSON.parse(userToken).user_id && (
+            <button
+              onClick={renderEditProfile}
+              className="custom-btn login-submit-button"
+            >
+              Edit Profile
+            </button>
+          )}
         </div>
       )}
     </div>

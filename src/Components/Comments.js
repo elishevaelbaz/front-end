@@ -1,4 +1,6 @@
 import React from "react";
+import Profile from "./Profile";
+import { Route, NavLink } from "react-router-dom";
 
 const Comments = (props) => {
   const user = window.localStorage.getItem("booklub");
@@ -28,12 +30,34 @@ const Comments = (props) => {
       });
   };
 
+  // const handleViewUserProfile = () => {
+  //   // <Profile user_id={props.comment.user_id} />;
+  //   console.log("clicked");
+  //   return (
+  //     <NavLink
+  //       exact
+  //       path="/profile"
+  //       render={() => <Profile {...props.comment.user_id} />}
+  //     />
+  //   );
+  // };
+
   return (
     <div>
       <h4 style={{ display: "inline" }}>
-        <span style={{ color: "#9c765d", fontWeight: "bold" }}>
-          {props.comment.user_name}
-        </span>
+        <NavLink
+          to={{
+            pathname: "/profile",
+            aboutProps: { user_id: props.comment.user_id },
+          }}
+        >
+          <span
+            // onClick={handleViewUserProfile}
+            style={{ color: "#9c765d", fontWeight: "bold" }}
+          >
+            {props.comment.user_name}
+          </span>
+        </NavLink>
         : {props.comment.content}
       </h4>
       {/* how can i make the buttons next to the username and content */}
