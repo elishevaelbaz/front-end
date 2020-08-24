@@ -13,16 +13,28 @@ const SearchBooks = (props) => {
       .then((resp) => resp.json())
       .then((obj) => {
         const booksArray = [];
-        obj.items.forEach((item) => {
-          booksArray.push({
-            author: item.volumeInfo.authors[0],
-            description: item.volumeInfo.description,
-            image_url: item.volumeInfo.imageLinks.thumbnail,
-            title: item.volumeInfo.title,
-            id: parseInt(item.volumeInfo.industryIdentifiers[0].identifier),
+
+        if (!obj.error) {
+          obj.items.forEach((item) => {
+            if (
+              item.volumeInfo.imageLinks &&
+              item.volumeInfo.industryIdentifiers
+            ) {
+              booksArray.push({
+                author: item.volumeInfo.authors
+                  ? item.volumeInfo.authors[0]
+                  : item.volumeInfo.publisher,
+                description: item.volumeInfo.description,
+                image_url: item.volumeInfo.imageLinks.thumbnail,
+                title: item.volumeInfo.title,
+                id: parseInt(item.volumeInfo.industryIdentifiers[0].identifier),
+              });
+            }
           });
-        });
-        props.setBooks(booksArray);
+          props.setBooks(booksArray);
+        } else {
+          alert("Missing search query. Please try again.");
+        }
       });
   };
 
