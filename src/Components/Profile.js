@@ -46,22 +46,24 @@ const Profile = (props) => {
       ) : (
         <div className="user-info">
           <h1>{user.name}</h1>
-          <h2>
-            <span>Username:</span> {user.username}
-          </h2>
-          <h2>
-            <span>Age:</span> {user.age}
-          </h2>
-          <h3>
-            <span>Bio:</span> {user.description}
-          </h3>
-          <h2>
-            <span>Fave Books: </span>
-            {user.favorite_books}
-          </h2>
-          <h2>
-            <span>Location:</span> {user.location}
-          </h2>
+          <div style={{ textAlign: "left" }}>
+            <h2>
+              <span>Username:</span> {user.username}
+            </h2>
+            <h3>
+              <span>Bio:</span> {user.description}
+            </h3>
+            <h2>
+              <span>Fave Books: </span>
+              {user.favorite_books}
+            </h2>
+            <h2>
+              <span>Location:</span> {user.location}
+            </h2>
+            <h2>
+              <span>Age:</span> {user.age}
+            </h2>
+          </div>
           <br />
           {user_id === JSON.parse(userToken).user_id && (
             <button
