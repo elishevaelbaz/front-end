@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Comments from "./Comments";
 import AddComment from "./AddComment";
 import "../App.css";
+import cable from "../cable";
 
 const BookClub = (props) => {
   //   console.log(props);
@@ -22,6 +23,29 @@ const BookClub = (props) => {
       .then((resp) => resp.json())
       .then((bookClub) => setBookclub(bookClub));
   }, []);
+
+  useEffect(() => {
+    const params = {
+      channel: "CommentChannel",
+      id: props.match.params.id,
+    };
+
+    const handlers = {
+      received: (newComment) => {
+        setBookclub((prevState) => {
+          // console.log(prevState);
+          return {
+            ...prevState,
+            comments: [...prevState.comments, newComment],
+          };
+        });
+      },
+      connected: () => console.log("connected"),
+      disconnected: () => console.log("disconnected"),
+    };
+
+    cable.subscriptions.create(params, handlers);
+  }, [props.match.params.id]);
 
   // console.log(bookclub);
   const renderComments = () => {
