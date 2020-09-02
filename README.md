@@ -16,7 +16,9 @@
 
 - React
 - Custom CSS
-- Rails
+- Ruby on Rails
+- PostgreSQL
+- Active Record
 - JSON Web Token
 - Google Books API
 - Cloudinary API

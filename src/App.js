@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { Switch, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import "./App.css";
-import BooksContainer from "./Components/BooksContainer";
-import Profile from "./Components/Profile";
-import Login from "./Components/Login";
-import Signup from "./Components/Signup";
-import Home from "./Components/Home";
-import BookClubsList from "./Components/BookClubsList";
-import BookClub from "./Components/BookClub";
-import Cursor from "./Components/Cursor";
+import React, { useState, useEffect } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import './App.css';
+import BooksContainer from './Components/BooksContainer';
+import Profile from './Components/Profile';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
+import Home from './Components/Home';
+import BookClubsList from './Components/BookClubsList';
+import BookClub from './Components/BookClub';
+import Cursor from './Components/Cursor';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(
-    window.localStorage.getItem("booklub")
+    window.localStorage.getItem('booklub')
   );
 
   // const [bookclub, setBookClub] = useState({});
@@ -37,6 +36,9 @@ function App() {
         <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <br></br>
         <Switch>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
           {loggedIn ? (
             <>
               <Route
