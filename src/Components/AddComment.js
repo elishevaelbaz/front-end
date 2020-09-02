@@ -27,18 +27,17 @@ const AddComment = (props) => {
         Accept: "application/json",
       },
       body: JSON.stringify({ ...comment, bookclub_id: props.bookclub_id }),
-    })
-      .then((resp) => resp.json())
-      .then((newComment) => {
-        props.setBookclub((prevState) => {
-          console.log(prevState);
-          return {
-            ...prevState,
-            comments: [...prevState.comments, newComment],
-          };
-        });
-        setComment({ content: "" });
-      });
+    }).then((resp) => resp.json());
+    // .then((newComment) => {
+    //   props.setBookclub((prevState) => {
+    //     // console.log(prevState);
+    //     return {
+    //       ...prevState,
+    //       comments: [...prevState.comments, newComment],
+    //     };
+    //   });
+    // });
+    setComment({ content: "" });
   };
 
   return (
