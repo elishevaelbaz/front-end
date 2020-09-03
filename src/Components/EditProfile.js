@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "../App.css";
+import React, { useState } from 'react';
+import '../App.css';
 
 const EditProfile = (props) => {
   // remember to remove the states which you dont end up using
@@ -22,17 +22,17 @@ const EditProfile = (props) => {
     }));
   };
 
-  let userToken = window.localStorage.getItem("booklub");
+  let userToken = window.localStorage.getItem('booklub');
   const token = JSON.parse(userToken).userToken;
 
   const handleSaveChanges = () => {
     // make a fetch patch to edit the user
     fetch(`http://localhost:3000/users/${props.user.id}`, {
-      method: "PATCH",
+      method: 'PATCH',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         Authorization: token,
-        Accept: "application/json",
+        Accept: 'application/json',
       },
       body: JSON.stringify(state),
     })
@@ -44,7 +44,6 @@ const EditProfile = (props) => {
     // change the seteditclicked to false
     props.setClickedEdit(false);
   };
-  //   console.log("in edit profile");
 
   return (
     <div className="edit-profile">

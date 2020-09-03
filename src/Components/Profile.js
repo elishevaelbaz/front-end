@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 import EditProfile from './EditProfile';
+import ChatModal from './ChatModal';
 
 const Profile = (props) => {
   const [user, setUser] = useState([]);
 
   const [clickedEdit, setClickedEdit] = useState(false);
+  const [clickedChatModal, setClickedChatModal] = useState(false);
 
   let userToken = window.localStorage.getItem('booklub');
   const token = JSON.parse(userToken).userToken;
@@ -30,6 +32,10 @@ const Profile = (props) => {
   const renderEditProfile = () => {
     // change the state so that clicked edit is true
     setClickedEdit(true);
+  };
+
+  const renderChatModal = () => {
+    setClickedChatModal(true);
   };
 
   return (
@@ -73,12 +79,22 @@ const Profile = (props) => {
               Edit Profile
             </button>
           ) : (
-            <button
-              // onClick={renderEditProfile}
-              className="custom-btn login-submit-button"
-            >
-              Chat
-            </button>
+            <>
+              {clickedChatModal ? (
+                <ChatModal
+                  clickedChatModal={clickedChatModal}
+                  setClickedChatModal={setClickedChatModal}
+                  user={user}
+                />
+              ) : (
+                <button
+                  onClick={renderChatModal}
+                  className="custom-btn login-submit-button"
+                >
+                  Chat
+                </button>
+              )}
+            </>
           )}
         </div>
       )}
