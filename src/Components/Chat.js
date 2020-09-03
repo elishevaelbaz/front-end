@@ -58,26 +58,12 @@ const Chat = (props) => {
       <div class="chat">
         <div class="chat-title">
           <h1>{props.user.name}</h1>
-          {/* <h2>Supah</h2> */}
           <figure class="avatar">
             <img src={props.user.image_url} />
           </figure>
         </div>
         <div class="messages">
-          <div class="messages-content">
-            {renderMessages()}
-            {/* <div class="message message-personal">dude</div>
-            <div class="message new">
-              <figure class="avatar">
-                <img src={props.user.image_url} />
-              </figure>
-              duuuuude
-              <div class="timestamp">01-01-1969</div>
-            </div>
-            <div class="message message-personal">
-              DUUUUUUUUUUUUUDE<div class="timestamp">01-01-1969</div>
-            </div> */}
-          </div>
+          <div class="messages-content">{renderMessages()}</div>
         </div>
         <div class="message-box">
           <textarea
